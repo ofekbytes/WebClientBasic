@@ -17,14 +17,27 @@
 .
 -- json - JavaScript Object Notation
 
--- 
+-- json file type extension: 
+"****.json"
+"file-name.json"
 
 
+-- json work with key,value pairs
+
+{"key":"value"}
+
+{"name":"Jron"}
+
+json variable types:
 Numbers - 0-9
 String - "0-9,a-z..."
 Boolean - true/false
 Array - [0]...
 Object - key,value pairs
+Null - empty value
+MIME - "application/json"
+
+
 
 
 
