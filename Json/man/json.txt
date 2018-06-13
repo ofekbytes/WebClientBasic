@@ -1,0 +1,32 @@
+.
+.
+- Json - JavaScript Object Notation -
+.
+.
+- subjects
+.
+.
+- #1111 - json information 
+
+
+
+
+.
+.
+- #1111 - json general information
+.
+-- json - JavaScript Object Notation
+
+-- 
+
+
+Numbers - 0-9
+String - "0-9,a-z..."
+Boolean - true/false
+Array - [0]...
+Object - key,value pairs
+
+
+
+
+
