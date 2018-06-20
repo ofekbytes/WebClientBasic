@@ -45,7 +45,7 @@
       //   console.log(data);
       // });
 
-      fetch('sample.txt')
+      fetch('./data/sample.txt')
       .then((res) => res.text())
       .then((data) => {
         document.getElementById('output').innerHTML = data;
@@ -55,7 +55,7 @@
 
     function getUsers(){
      // fetch('users.json')
-      fetch('js.json')
+      fetch('./data/js.json')
       .then((res) => res.json())
       .then((data) => {
         let output = '<h2 class="mb-4">Users</h2>';
