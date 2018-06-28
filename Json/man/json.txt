@@ -25,18 +25,22 @@
 -- json work with key,value pairs
 
 {"key":"value"}
-
 {"name":"Jron"}
+
+{"key":number}
+{"age":33}
 
 json variable types:
 Numbers - 0-9
 String - "0-9,a-z..."
 Boolean - true/false
-Array - [0]...
+Array - [0]...  "[" ... "]"
 Object - key,value pairs
 Null - empty value
 MIME - "application/json"
 
+
+Bson --> rtfm
 
 
 
