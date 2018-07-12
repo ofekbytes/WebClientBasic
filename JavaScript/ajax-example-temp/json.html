@@ -16,6 +16,16 @@
       <button class="btn btn-success mr-4" id="getUsers">Get JSON</button>
       <button class="btn btn-warning mr-4" id="getPosts">Get API DATA</button>
     </div>
+
+    <div>
+      <select id="cbList" class="selectpicker">
+        <!-- <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option> -->
+      </select>
+    </div>
+
     <hr>
     <div id="output"></div>
     <form id="addPost">
@@ -93,27 +103,69 @@
     //   })
     // }
 
+
+
    function getPosts(){
-      fetch('http://localhost:8080/greetings')
+      fetch('http://localhost:8080/list')
       .then((res) => res.json())
       .then((data) => {
         let output = '<h2 class="mb-4">Posts</h2>';
         data.forEach(function(post){
           output += `
             <div class="card card-body mb-3">
-              <h3>${post.barcode}</h3>
-              <p>${post.source}</p>
-              <p>${post.destination}</p>
-              <p>${post.estrSertypename}</p>
-              <p>${post.estrIntypename}</p>
-              <p>${post.brixMascode}</p>
-              <p>${post.brixMasname}</p>                                          
+              <h3>${post.custname}</h3>
+              <p>${post.custdes}</p>                              
             </div>
           `;
         });
         document.getElementById('output').innerHTML = output;
       })
     }
+
+
+   function getCbList()
+   {
+      //fetch('http://localhost:8080/list')
+      fetch('sample.json')
+      .then((res) => res.json())
+      .then((data) => {
+        let output = '<h2 class="mb-4">Posts</h2>';
+        data.forEach(function(post){
+          output += `
+            // <div class="card card-body mb-3">
+            //   <h3>${post.custname}</h3>
+            //   <p>${post.custdes}</p>                              
+            // </div>
+            <option value="post.custname">${post.custname} ${post.custdes}</option>
+          `;
+        });
+        document.getElementById('cbList').innerHTML = output;
+      })
+    }
+
+
+
+  //  function getPosts(){
+  //     fetch('http://localhost:8080/greetings')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       let output = '<h2 class="mb-4">Posts</h2>';
+  //       data.forEach(function(post){
+  //         output += `
+  //           <div class="card card-body mb-3">
+  //             <h3>${post.barcode}</h3>
+  //             <p>${post.source}</p>
+  //             <p>${post.destination}</p>
+  //             <p>${post.estrSertypename}</p>
+  //             <p>${post.estrIntypename}</p>
+  //             <p>${post.brixMascode}</p>
+  //             <p>${post.brixMasname}</p>                                          
+  //           </div>
+  //         `;
+  //       });
+  //       document.getElementById('output').innerHTML = output;
+  //     })
+  //   }
 
 
     function addPost(e){
@@ -133,6 +185,10 @@
       .then((res) => res.json())
       .then((data) => console.log(data))
     }
+
+
+    getCbList();
+    
   </script>
 </body>
 </html>
