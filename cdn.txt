@@ -18,7 +18,6 @@ JS
 https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js
 
 
-
 CSS
 https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css
 JS
