@@ -1,0 +1,25 @@
+
+    //data, callback, settings//
+
+.DataTable({
+    serverSide: true,
+    ajax: function(data, callback, settings) {
+        // make a regular ajax request using data.start and data.length
+        $.get('/client/api/v1/departments/', {
+            limit: data.length,
+            offset: data.start,
+            dept_name__icontains: data.search.value
+        }, function(res) {
+            // map your server's response to the DataTables format and pass it to
+            // DataTables' callback
+            callback({
+                recordsTotal: res.meta.total_count,
+                recordsFiltered: res.meta.total_count,
+                data: res.objects
+            });
+        });
+    }
+});
+
+
+// //
