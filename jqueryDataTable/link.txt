@@ -1,0 +1,6 @@
+
+== rtfm ==
+
+https://datatables.net/reference/option/ajax
+
+

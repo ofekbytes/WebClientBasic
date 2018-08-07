@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <title>take.1.10 -  Alternative pagination  </title>
+    <title>take.1.11 -  Language file    </title>
 
     <link href="../assets/modular/css/core.css" rel="stylesheet" type="text/css">
     <link href="../assets/bootstrap-4.1.2-dist/css/bootstrap.min.css"  rel="stylesheet" type="text/css">  
@@ -41,7 +41,7 @@
 
 $(document).ready(function() {
     $('#example').DataTable( {
-      "pagingType": "full_numbers", //'First', 'Previous', 'Next' and 'Last' buttons
+    //  "pagingType": "full_numbers", //'First', 'Previous', 'Next' and 'Last' buttons
       // "pagingType": "numbers" //Page number buttons only 
       // "pagingType": "simple" // 'Previous' and 'Next' buttons only
       // "pagingType": "simple_numbers" // 'Previous' and 'Next' buttons, plus page numbers
@@ -49,29 +49,17 @@ $(document).ready(function() {
       
 
     //Todo: Create an External translte file
-    "language": 
-    {
-        "paginate": 
+         "language": 
         {
-            "first" : "דף ראשון",
-            "last" : "דף אחרון",
-            "previous" : "דף קודם",
-            "next" : " דף הבא"
-        },
-        "search": "חיפוש",
-        "searchPlaceholder" : "הכנס ערך לחיפוש",
-        "emptyTable" : "אין נתונים להצגה",
-        // "info" : "-[_TOTAL_]...........[_START_ >> _END_]- " ,
-        "info" : "...[ _START_ - _END_ ]......< _TOTAL_ > " ,
-        "infoEmpty": "אין נתונים להצגה",
-        "loadingRecords": "...[  טוען נתונים - אנא המתן  ]... ",
-        "infoFiltered": " - פלטור מ- _MAX_ רשומות",
-        "zeroRecords": "אין נתונים להצגה",
-        // "",
-    }
+            //"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Hebrew.json"
+            // Cross origin requests //
+            "url": "./dataTableHebrewLanguage.json"  
+        }
 
     } );
 } );
+
+
 
 
 //Enable state saving and override state save/load handlers to use only the table's DOM id:
