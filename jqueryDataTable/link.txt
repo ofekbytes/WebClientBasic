@@ -4,3 +4,6 @@
 https://datatables.net/reference/option/ajax
 
 
+
+git - bootstrap select
+https://github.com/silviomoreto/bootstrap-select.git
