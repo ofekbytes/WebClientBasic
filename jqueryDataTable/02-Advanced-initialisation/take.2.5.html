@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <title>take.2.4 - Page length options </title>
+    <title>take.2.5 - Multiple table control elements </title>
 
     <link href="../../assets/modular/css/core.css" rel="stylesheet" type="text/css">
     <link href="../../assets/bootstrap-4.1.2-dist/css/bootstrap.min.css"  rel="stylesheet" type="text/css">  
@@ -36,26 +36,14 @@
 
 <script>
 
-// https://datatables.net/reference/option/lengthMenu
+// rtfm
+// https://datatables.net/reference/option/dom
 
 $(document).ready(function() {
     $('#example').DataTable( {
-        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+        "dom": '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>'
     } );
 } );
-
-
-//ex1: Show options 10, 25, 50, 75 and 100 records:
-// $('#example').dataTable( {
-//   "lengthMenu": [ 10, 25, 50, 75, 100 ]
-// } );
-
-
-//ex2: Show options 10, 25, 50 and all records:
-// $('#example').dataTable( {
-//   "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
-// } );
-
 
 </script>
 

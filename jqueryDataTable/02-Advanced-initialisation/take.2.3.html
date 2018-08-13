@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <title>take.2.3 -    </title>
+    <title>take.2.3 -  Column rendering  </title>
 
     <link href="../../assets/modular/css/core.css" rel="stylesheet" type="text/css">
     <link href="../../assets/bootstrap-4.1.2-dist/css/bootstrap.min.css"  rel="stylesheet" type="text/css">  
@@ -35,19 +35,23 @@
 <body>
 
 <script>
+// https://datatables.net/reference/option/columns.render
 
 $(document).ready(function() {
-    var eventFired = function ( type ) {
-        var n = $('#demo_info')[0];
-        n.innerHTML += '<div>'+type+' event - '+new Date().getTime()+'</div>';
-        n.scrollTop = n.scrollHeight;      
-    }
- 
-    $('#example')
-        .on( 'order.dt',  function () { eventFired( 'Order' ); } )
-        .on( 'search.dt', function () { eventFired( 'Search' ); } )
-        .on( 'page.dt',   function () { eventFired( 'Page' ); } )
-        .DataTable();
+    $('#example').DataTable( {
+        "columnDefs": [
+            {
+                // The `data` parameter refers to the data for the cell (defined by the
+                // `data` option, which defaults to the column being worked with, in
+                // this case `data: 0`.
+                "render": function ( data, type, row ) {
+                    return data +' ('+ row[3]+')';
+                },
+                "targets": 0
+            },
+            { "visible": false,  "targets": [ 3 ] }
+        ]
+    } );
 } );
 
 
