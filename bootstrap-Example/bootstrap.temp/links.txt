@@ -5,4 +5,6 @@ https://thdoan.github.io/bootstrap-select/examples.html
 
 http://paulrose.com/bootstrap-select-sass/
 
+https://github.com/silviomoreto/bootstrap-select/issues/752
 
+https://stackoverflow.com/questions/41843395/get-the-current-value-in-bootstrap-select
