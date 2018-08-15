@@ -2,52 +2,118 @@
 //Global varaible
 //
 var glCbValue = [];
-var selected = []; //delete
+
+
+function loadList()
+{
+
+
+    const url = 'http://localhost:8080/list';
+
+    // const localurl = 'sample.json';
+
+    fetch(url)  
+      .then(  
+        function(response) 
+        {  
+          if (response.status !== 200) 
+          {  
+            console.warn('Looks like there was a problem. Status Code: ' + 
+              response.status);  
+            return "error 200";  
+          }
+    
+          // Examine the text in the response  
+          response.json().then(function(post) 
+          {
+            let outputKey = ``;
+            let outPutValue = ``;
+          //  let option = ``;
+        
+            for (let i = 0; i < post.length; i++) 
+            {
+                // option = document.createElement('option');
+                // option.text = data[i].name;
+                // option.value = data[i].abbreviation;
+                // dropdown.add(option);
+
+                console.log("i == " + post[i].custname + " , " + post[i].custdes);
+
+                // temp delete
+                // outputKey += `<option value="data[i].custname">${data[i].custname} </option> `;
+                // outPutValue += `<option value="data[i].custdes">${data[i].custdes} </option> `;
+            }
+
+             // data.forEach(function(post){
+             // outputKey += `<option value="post.custname">${post.custname} </option> `;
+             // outPutValue += `<option value="post.custdes">${post.custdes} </option> `;
+
+         // });  
+          
+       //   document.getElementById('sp2').innerHTML = outputKey;
+          document.getElementById('sp3').innerHTML =  outputKey;
+        }  
+      )  
+
+      .catch(function(err) {  
+        console.error('Fetch Error -', err);  
+      });
+
+    }
+    )}
 
 
 function getOnloadData()
 {
+    loadList();
 
-     //  $(document).ready(function(e) {
 
-
-      $(function()
-      {
-          // default //
-//          $('.selectpicker').selectpicker();     //ok         
-
-///////          $('#sp2').selectpicker();  // dont delete
-          $("#sp2").selectpicker({
-           // noneSelectedText : 'בחר בבקשה', // by this default 'Nothing selected' -->will change to Please Select
-            //selectAllText : 'בחר הכל',
-
-            selectAllText:"בחר הכל",
-            deselectAllText:"בטל הכל",
-        });
+ 
+    // fetch('http://localhost:8080/list')
+    //fetch('file://sample.json')  
+    // .then((res) => res.json())
+    // .then((data) => {
+    
+    //     let outputKey = ``;
+    //     let outPutValue = ``;
+    
+    //     data.forEach(function(post){
         
-          // check all selected element and display result in console.
-//          $('.selectpicker').on('change', function() //ok
-          $('#sp2').on('change', function()
-          {
-                //var selected = [] // data move to global variable //delete 
-//                glCbValue = $('.selectpicker').val() //ok
-                glCbValue = $('#sp2').val()
-                // console.log(glCbValue); //Get the multiple values selected in an array
-                // console.log(glCbValue.length); //Length of the array
-          });
-       });
+    //         outputKey += `<option value="post.custname">${post.custname} </option> `;
+    //         outPutValue += `<option value="post.custdes">${post.custdes} </option> `;
+    //     });
+    
+    //    document.getElementById('sp2').innerHTML = outputKey;
+    //    document.getElementById('sp3').innerHTML =  outPutValue;
+       
+    // })
+    // }
+    
 
-// on.click  // delete
-//     $('#sp2').on('click',function() {
-//   alert($(this).val());
-//   console.log($(this).val());
-// }); 
+    $(function()
+    {
+        // language
+        //set hebrew language - for list -  testing only
+        // $("#sp2").selectpicker(
+        // {
+        //   selectAllText:"בחר הכל",
+        //   deselectAllText:"בטל הכל",
+        // });
+        
 
-    //   });
+        //select and change value in array (glCbValue)
+        $('#sp2').on('change', function()
+        {
+            glCbValue = $('#sp2').val()
+        });
+    });
+
 
     // Listener // button - click //
     document.getElementById('submit').addEventListener('click', getText);
 }
+
+
 
 
 // click event trigger //
@@ -57,55 +123,6 @@ function getText()
     console.log("====");
     console.log("glCbValue [] selected array ==> " + glCbValue);
     console.log("====");
-
-
-    var listResult;
-
-    console.info(" Nice ");
-    console.info("Result = " + document.getElementById("sp2").selectedIndex );
-
-    //test
-    //console.info("test = " + document.getElementById("sp2").querySelectorAll() );
-
-    var fromDatex;
-    var fromDatey;
-    var stCbListKey;
-    var totalRecords;
-
-    // totalRecords = document.getElementById("sp2").size();
-    // console.log("size == " + totalRecords);
-
-    fromDatex = document.getElementById("sp2").selectedIndex;
-    if (fromDatex >= 0)
-    {
-        fromDatey = document.getElementById("sp2").options;
-        stCbListKey = ""  + fromDatey[fromDatex].text;
-        console.log(stCbListKey);
-    }
-    else 
-    {
-        console.log("===!=== fromDatex small the 0");
-    }
-
-
-
-///???
-    // $('#sp2').on('click',function(e) {
-    //     alert($(this).val());
-    //     console.log($(this).val());
-    //   });
-
-
-
-   // console.log(" **** ");
-
-   //  $('.selectpicker').change(function () {
-//    $('#sp2').change(function () 
-//    {        
-//         var slecteditem= $(this).find("option:selected").val();    
-//      //   alert(slecteditem);
-
-//         console.info("slecteditem " + slecteditem);
-//     });
 }
+
 
