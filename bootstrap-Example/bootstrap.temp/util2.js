@@ -7,8 +7,8 @@ var glCbValue = [];
 function loadList()
 {
 
-
-    const url = 'http://localhost:8080/list';
+    console.log("loadList() function loaded ");
+    const url = 'http://localhost:8080/listJson';
 
     // const localurl = 'sample.json';
 
@@ -16,18 +16,23 @@ function loadList()
       .then(  
         function(response) 
         {  
+          console.log(response);
+
           if (response.status !== 200) 
           {  
-            console.warn('Looks like there was a problem. Status Code: ' + 
-              response.status);  
+            console.warn('Looks like there was a problem. Status Code: ' + response.status);  
             return "error 200";  
           }
     
+
           // Examine the text in the response  
           response.json().then(function(post) 
           {
+            //console.log(post);
+
             let outputKey = ``;
             let outPutValue = ``;
+            let outBoth = ``;
           //  let option = ``;
         
             for (let i = 0; i < post.length; i++) 
@@ -37,11 +42,11 @@ function loadList()
                 // option.value = data[i].abbreviation;
                 // dropdown.add(option);
 
-                console.log("i == " + post[i].custname + " , " + post[i].custdes);
+                //console.log("i == " + post[i].custname + " , " + post[i].custdes);
 
                 // temp delete
-                // outputKey += `<option value="data[i].custname">${data[i].custname} </option> `;
-                // outPutValue += `<option value="data[i].custdes">${data[i].custdes} </option> `;
+                 outputKey += `<option value="data[i].custname">${post[i].custname} </option> `;
+                 outPutValue += `<option value="data[i].custdes">${post[i].custdes} </option> `;
             }
 
              // data.forEach(function(post){
