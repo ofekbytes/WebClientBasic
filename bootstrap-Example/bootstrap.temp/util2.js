@@ -28,13 +28,14 @@ function loadList()
           // Examine the text in the response  
           response.json().then(function(post) 
           {
-            //console.log(post);
+            console.log(post);
 
-            let outputKey = ``;
-            let outPutValue = ``;
-            let outBoth = ``;
-          //  let option = ``;
-        
+            let outputKey = '';
+            let outPutValue = '';
+            let outBoth = '';
+          //  let option = '';
+
+          let newOption ;
             for (let i = 0; i < post.length; i++) 
             {
                 // option = document.createElement('option');
@@ -44,19 +45,30 @@ function loadList()
 
                 //console.log("i == " + post[i].custname + " , " + post[i].custdes);
 
-                // temp delete
-                 outputKey += `<option value="data[i].custname">${post[i].custname} </option> `;
-                 outPutValue += `<option value="data[i].custdes">${post[i].custdes} </option> `;
+
+                // test 1 temp delete
+               //  outputKey += '<option value="data[i].custname">${post[i].custname} </option> ';
+               //  outPutValue += '<option value="data[i].custdes">${post[i].custdes} </option> ';
+
+               // test 2 
+               document.getElementById('sp3').Options.add(new Option("post[i].custdes", "post[i].custdes"));
+
+             // test 3
+              // newOption = document.createElement('option');
+              // newOption.value = post[i].custdes;
+              // newOption.text = post[i].custdes;
+              // $("#sp3").appendChild(newOption);
+
             }
 
              // data.forEach(function(post){
-             // outputKey += `<option value="post.custname">${post.custname} </option> `;
-             // outPutValue += `<option value="post.custdes">${post.custdes} </option> `;
+             // outputKey += '<option value="post.custname">${post.custname} </option> ';
+             // outPutValue += '<option value="post.custdes">${post.custdes} </option> ';
 
          // });  
           
        //   document.getElementById('sp2').innerHTML = outputKey;
-          document.getElementById('sp3').innerHTML =  outputKey;
+          //document.getElementById('sp3').innerHTML =  outputKey;
         }  
       )  
 
@@ -79,13 +91,13 @@ function getOnloadData()
     // .then((res) => res.json())
     // .then((data) => {
     
-    //     let outputKey = ``;
-    //     let outPutValue = ``;
+    //     let outputKey = '';
+    //     let outPutValue = '';
     
     //     data.forEach(function(post){
         
-    //         outputKey += `<option value="post.custname">${post.custname} </option> `;
-    //         outPutValue += `<option value="post.custdes">${post.custdes} </option> `;
+    //         outputKey += '<option value="post.custname">${post.custname} </option> ';
+    //         outPutValue += '<option value="post.custdes">${post.custdes} </option> ';
     //     });
     
     //    document.getElementById('sp2').innerHTML = outputKey;
