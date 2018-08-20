@@ -10,8 +10,6 @@ function loadList()
     console.log("loadList() function loaded ");
     const url = 'http://localhost:8080/listJson';
 
-    // const localurl = 'sample.json';
-
     fetch(url)  
       .then(  
         function(response) 
@@ -28,47 +26,26 @@ function loadList()
           // Examine the text in the response  
           response.json().then(function(post) 
           {
+            //display post value.
             console.log(post);
 
             let outputKey = '';
             let outPutValue = '';
             let outBoth = '';
-          //  let option = '';
+
 
           let newOption ;
             for (let i = 0; i < post.length; i++) 
             {
-                // option = document.createElement('option');
-                // option.text = data[i].name;
-                // option.value = data[i].abbreviation;
-                // dropdown.add(option);
 
-                //console.log("i == " + post[i].custname + " , " + post[i].custdes);
-
-
-                // test 1 temp delete
                  outputKey += '<option value="data[i].custname">${post[i].custname} </option> ';
                  outPutValue += '<option value="data[i].custdes">${post[i].custdes} </option> ';
 
-               // test 2 
-               document.getElementById('sp3').Options.Add(new Option("post[i].custdes", "post[i].custdes"));
-
-             // test 3
-              // newOption = document.createElement('option');
-              // newOption.value = post[i].custdes;
-              // newOption.text = post[i].custdes;
-              // $("#sp3").appendChild(newOption);
-
             }
 
-             // data.forEach(function(post){
-             // outputKey += '<option value="post.custname">${post.custname} </option> ';
-             // outPutValue += '<option value="post.custdes">${post.custdes} </option> ';
+                document.getElementById('sp3').innerText = outputKey;
+                $("sp3").response;
 
-         // });  
-          
-       //   document.getElementById('sp2').innerHTML = outputKey;
-          //document.getElementById('sp3').innerHTML =  outputKey;
         }  
       )  
 
@@ -85,52 +62,22 @@ function getOnloadData()
     loadList();
 
 
- 
-    // fetch('http://localhost:8080/list')
-    //fetch('file://sample.json')  
-    // .then((res) => res.json())
-    // .then((data) => {
-    
-    //     let outputKey = '';
-    //     let outPutValue = '';
-    
-    //     data.forEach(function(post){
-        
-    //         outputKey += '<option value="post.custname">${post.custname} </option> ';
-    //         outPutValue += '<option value="post.custdes">${post.custdes} </option> ';
-    //     });
-    
-    //    document.getElementById('sp2').innerHTML = outputKey;
-    //    document.getElementById('sp3').innerHTML =  outPutValue;
-       
-    // })
-    // }
-    
 
     $(function()
     {
-        // language
-        //set hebrew language - for list -  testing only
-        // $("#sp2").selectpicker(
-        // {
-        //   selectAllText:"בחר הכל",
-        //   deselectAllText:"בטל הכל",
-        // });
-        
 
         //select and change value in array (glCbValue)
         $('#sp2').on('change', function()
         {
             glCbValue = $('#sp2').val()
         });
-    });
 
+    });
 
     // Listener // button - click //
     document.getElementById('submit').addEventListener('click', getText);
+    
 }
-
-
 
 
 // click event trigger //
