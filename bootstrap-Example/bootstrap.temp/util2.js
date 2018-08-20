@@ -47,11 +47,11 @@ function loadList()
 
 
                 // test 1 temp delete
-               //  outputKey += '<option value="data[i].custname">${post[i].custname} </option> ';
-               //  outPutValue += '<option value="data[i].custdes">${post[i].custdes} </option> ';
+                 outputKey += '<option value="data[i].custname">${post[i].custname} </option> ';
+                 outPutValue += '<option value="data[i].custdes">${post[i].custdes} </option> ';
 
                // test 2 
-               document.getElementById('sp3').Options.add(new Option("post[i].custdes", "post[i].custdes"));
+               document.getElementById('sp3').Options.Add(new Option("post[i].custdes", "post[i].custdes"));
 
              // test 3
               // newOption = document.createElement('option');
