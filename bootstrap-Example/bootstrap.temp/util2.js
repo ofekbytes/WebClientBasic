@@ -14,6 +14,7 @@ function loadList()
       .then(  
         function(response) 
         {  
+          console.log("response");
           console.log(response);
 
           if (response.status !== 200) 
@@ -27,6 +28,7 @@ function loadList()
           response.json().then(function(post) 
           {
             //display post value.
+            console.log("post ==> ");
             console.log(post);
 
             let outputKey = '';
@@ -38,13 +40,24 @@ function loadList()
             for (let i = 0; i < post.length; i++) 
             {
 
-                 outputKey += '<option value="data[i].custname">${post[i].custname} </option> ';
-                 outPutValue += '<option value="data[i].custdes">${post[i].custdes} </option> ';
+                 outputKey   += '<option value=' + post[i].custname + '>' + post[i].custname + ' </option> ';
+                 outPutValue += '<option value=' + post[i].custdes  + '>' + post[i].custdes + ' </option> ';
+
+                // output //
+                // console.log(i);
+                // console.log(" outputKey " + outputKey);
+                // console.log(" outPutValue " + outPutValue);
+                
+                
+                // console.log(" i == " + i + " ${post[i].custname} == " + ${post[i].custname} );
+                // console.log(" ${post[i].custdes} == " + ${post[i].custdes} );
 
             }
+              // document.getElementById('cbListKey').innerHTML = outputKey;
+              // document.getElementById('cbListvalue').innerHTML =  outPutValue;
 
-                document.getElementById('sp3').innerText = outputKey;
-                $("sp3").response;
+              document.getElementById('sp3').innerHTML = outputKey;
+              
 
         }  
       )  
