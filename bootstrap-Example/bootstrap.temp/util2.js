@@ -2,6 +2,7 @@
 //Global varaible
 //
 var glCbValue = [];
+var glCbValue3 = [];
 
 
 function loadList()
@@ -34,31 +35,18 @@ function loadList()
             let outputKey = '';
             let outPutValue = '';
             let outBoth = '';
-
-
-          let newOption ;
+            let newOption ;
             for (let i = 0; i < post.length; i++) 
-            {
+              {
+                  outputKey   += '<option data-tokens=' + post[i].custname + '>' + post[i].custname + ' - ' +  post[i].custdes + ' </option> ';
 
-                 outputKey   += '<option value=' + post[i].custname + '>' + post[i].custname + ' </option> ';
-                 outPutValue += '<option value=' + post[i].custdes  + '>' + post[i].custdes + ' </option> ';
-
-                // output //
-                // console.log(i);
-                // console.log(" outputKey " + outputKey);
-                // console.log(" outPutValue " + outPutValue);
-                
-                
-                // console.log(" i == " + i + " ${post[i].custname} == " + ${post[i].custname} );
-                // console.log(" ${post[i].custdes} == " + ${post[i].custdes} );
-
-            }
-              // document.getElementById('cbListKey').innerHTML = outputKey;
-              // document.getElementById('cbListvalue').innerHTML =  outPutValue;
-
-              document.getElementById('sp3').innerHTML = outputKey;
+                  // temp keep //
+                  // outputKey   += '<option value=' + post[i].custname + '>' + post[i].custname + ' - ' +  post[i].custdes + ' </option> '; 
+              }
+              $("#sp3").html(outputKey);
+              $("#sp3").selectpicker('refresh');
+            });
               
-
         }  
       )  
 
@@ -67,8 +55,7 @@ function loadList()
       });
 
     }
-    )}
-
+ 
 
 function getOnloadData()
 {
@@ -82,7 +69,13 @@ function getOnloadData()
         //select and change value in array (glCbValue)
         $('#sp2').on('change', function()
         {
-            glCbValue = $('#sp2').val()
+            glCbValue = $('#sp2').val();
+        });
+
+
+        $('#sp3').on('change', function()
+        {
+            glcbvalue3 = $('#sp3').value();
         });
 
     });
@@ -99,6 +92,7 @@ function getText()
     //show all selected data.
     console.log("====");
     console.log("glCbValue [] selected array ==> " + glCbValue);
+    console.log("glCbValue3 [] selected array ==> " + glCbValue3);
     console.log("====");
 }
 
