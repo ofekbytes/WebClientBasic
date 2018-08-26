@@ -38,7 +38,9 @@ function loadList()
             let newOption ;
             for (let i = 0; i < post.length; i++) 
               {
-                  outputKey   += '<option data-tokens=' + post[i].custname + '>' + post[i].custname + ' - ' +  post[i].custdes + ' </option> ';
+                 // outputKey   += '<option data-tokens=' + post[i].custname + ' value=' + post[i].custname + ' >'  + post[i].custname + ' - ' +  post[i].custdes + ' </option> ';
+
+                 outputKey   += '<option data-tokens=' + post[i].custname + ' >'  + post[i].custname + ' - ' +  post[i].custdes + ' </option> ';
 
                   // temp keep //
                   // outputKey   += '<option value=' + post[i].custname + '>' + post[i].custname + ' - ' +  post[i].custdes + ' </option> '; 
@@ -75,7 +77,8 @@ function getOnloadData()
 
         $('#sp3').on('change', function()
         {
-            glcbvalue3 = $('#sp3').value();
+            //glcbvalue3 = $('#sp3').value();
+            glcbvalue3 = $('#sp3').val();
         });
 
     });
