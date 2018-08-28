@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <title>take.2.7 -  Read HTML to data objects </title>
+    <title>take.3.1 -  HTML (DOM) sourced data </title>
 
     <link href="../../assets/modular/css/core.css" rel="stylesheet" type="text/css">
     <link href="../../assets/bootstrap-4.1.2-dist/css/bootstrap.min.css"  rel="stylesheet" type="text/css">  
@@ -41,19 +41,10 @@
 // (06-Ajax\take.6.2.html)
 
 $(document).ready(function() {
-    $('#example').DataTable({
-        "columns": [
-            { "data": "name" },
-            { "data": "position" },
-            { "data": "office" },
-            { "data": "age" },
-            { "data": "start_date" },
-            { "data": "salary" }
-        ]
-    });
+    $('#example').DataTable();
 } );
 
-// $('#example').DataTable().ajax.reload();
+$('#example').DataTable().ajax.reload();
 
 </script>
 

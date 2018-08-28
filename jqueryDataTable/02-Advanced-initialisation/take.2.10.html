@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <title>take.2.7 -  Read HTML to data objects </title>
+    <title>take.2.10 -  Language file </title>
 
     <link href="../../assets/modular/css/core.css" rel="stylesheet" type="text/css">
     <link href="../../assets/bootstrap-4.1.2-dist/css/bootstrap.min.css"  rel="stylesheet" type="text/css">  
@@ -35,31 +35,21 @@
 <body>
 
 <script>
-
-// rtfm -
-// https://datatables.net/examples/ajax/objects.html 
-// (06-Ajax\take.6.2.html)
+// all languages available //
+//http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/
 
 $(document).ready(function() {
-    $('#example').DataTable({
-        "columns": [
-            { "data": "name" },
-            { "data": "position" },
-            { "data": "office" },
-            { "data": "age" },
-            { "data": "start_date" },
-            { "data": "salary" }
-        ]
-    });
+    $('#example').DataTable( {
+        "language": {
+            // "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Hebrew.json"
+            "url": "http://localhost:8080/dataTabelLangage"
+        }
+    } );
 } );
-
-// $('#example').DataTable().ajax.reload();
-
 </script>
 
 <div id="demo_info"></div>
-
-<table id="example" class="display" style="width:100%">
+    <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>Name</th>
