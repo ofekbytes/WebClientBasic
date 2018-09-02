@@ -40,7 +40,7 @@ function loadList()
               {
                  // outputKey   += '<option data-tokens=' + post[i].custname + ' value=' + post[i].custname + ' >'  + post[i].custname + ' - ' +  post[i].custdes + ' </option> ';
 
-                 outputKey   += '<option data-tokens=' + post[i].custname + ' >'  + post[i].custname + ' - ' +  post[i].custdes + ' </option> ';
+                 outputKey   += '<option data-tokens=' + post[i].custname + ' value= "' + post[i].custname + '" >'  + post[i].custname + ' - ' +  post[i].custdes + ' </option> ';
 
                   // temp keep //
                   // outputKey   += '<option value=' + post[i].custname + '>' + post[i].custname + ' - ' +  post[i].custdes + ' </option> '; 

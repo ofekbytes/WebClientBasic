@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <title>take.3.2 -  Ajax sourced data </title>
+    <title>take.6.3 -  Ajax data source (objects) </title>
 
     <link href="../../assets/modular/css/core.css" rel="stylesheet" type="text/css">
     <link href="../../assets/bootstrap-4.1.2-dist/css/bootstrap.min.css"  rel="stylesheet" type="text/css">  
@@ -35,43 +35,54 @@
 <body>
 
 <script>
-//
-// https://datatables.net/reference/option/ajax
+
 // https://datatables.net/reference/option/columns.data
-// https://datatables.net/reference/option/columns.data
-//
-$(document).ready(function() 
-{
-    $('#example').DataTable( 
-    {
-        "ajax": './take.3.2.txt'
+
+//fix: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "ajax": "take.6.3.json",
+        "columns": [
+            { "data": "id" },
+            { "data": "name" },
+            { "data": "position" },
+            { "data": "salary" },
+            { "data": "start_date" },
+            { "data": "office" },
+            { "data": "extn" }            
+        ]
     } );
 } );
 
 </script>
 
-    <table id="example" class="display" style="width:100%">
+<div id="demo_info"></div>
+
+<table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Extn.</th>
+                <th>id</th>
+                <th>name</th>
+                <th>position</th>
+                <th>salary.</th>
                 <th>Start date</th>
-                <th>Salary</th>
+                <th>office</th>
+                <th>extn</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Extn.</th>
+                <th>id</th>
+                <th>name</th>
+                <th>position</th>
+                <th>salary.</th>
                 <th>Start date</th>
-                <th>Salary</th>
+                <th>office</th>
+                <th>extn</th>
             </tr>
         </tfoot>
     </table>
+
 
 </body>
 </html>
