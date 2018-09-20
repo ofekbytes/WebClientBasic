@@ -28,3 +28,11 @@ https://stackoverflow.com/questions/35038857/setting-query-string-using-fetch-ge
 http://paulrose.com/bootstrap-select-sass/
 
 
+////******************/////
+// java-script promises //
+https://davidwalsh.name/write-javascript-promises
+
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+//Add Option Using DOM Methods//
+https://www.dyn-web.com/tutorials/forms/select/option/
